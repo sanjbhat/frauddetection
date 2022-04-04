@@ -1,4 +1,4 @@
-# frauddetection
+# Rule based Fraud Detection Service
 Project that implements rule based fraud detection on incoming finance transaction
 
 ### Pre-requisites
