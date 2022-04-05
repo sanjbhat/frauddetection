@@ -10,7 +10,9 @@ Project that implements rule based fraud detection on incoming finance transacti
 ```bash
 mvn clean install
 java -jar target/transactions-0.0.1-SNAPSHOT.jar
-
+```
 or simply with one command
+```bash
 mvn spring-boot:run
 ```
+
