@@ -1,9 +1,6 @@
 package com.fintech.transactions.service;
 
 import com.fintech.transactions.dao.RedisClient;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 import java.time.LocalDate;
 
 /**
@@ -13,7 +10,6 @@ import java.time.LocalDate;
  */
 public class MockServiceImpl implements MockService {
 
-    private static final Logger logger = LogManager.getLogger(MockServiceImpl.class);
     RedisClient redisClient = new RedisClient();
 
     @Override
@@ -28,14 +24,14 @@ public class MockServiceImpl implements MockService {
 
     @Override
     public String getCountry(String ipAddress) throws Exception {
-        if (ipAddress.startsWith("127"))
+        if (ipAddress.startsWith("103"))
             return "India";
-        return "Poland";
+        return "Foreign";
     }
 
     @Override
     public String getCity(String ipAddress) throws Exception {
-        if (ipAddress.startsWith("127.80"))
+        if (ipAddress.startsWith("103.80"))
             return "Bangalore";
         return "Delhi";
     }

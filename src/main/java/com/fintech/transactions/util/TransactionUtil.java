@@ -48,6 +48,17 @@ public class TransactionUtil {
     }
 
     /**
+     * @return object with canned response for internal server error
+     */
+    public static Map<String, String> getInvalidRequest() {
+        Map<String, String> response = new HashMap<>();
+        response.put("status", "invalid request");
+        response.put("reason", "400");
+
+        return response;
+    }
+
+    /**
      * helper code to load properties from given file and return prop name and value in a map
      *
      * @param filename

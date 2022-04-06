@@ -3,7 +3,6 @@ package com.fintech.transactions.service.anomaly;
 import com.fintech.transactions.model.Transaction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import java.security.SecureRandom;
 
 /**

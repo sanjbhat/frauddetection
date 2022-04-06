@@ -1,13 +1,18 @@
 package com.fintech.transactions.model;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
 /**
  * Schema for a typical user transaction.
  * Fields country, city, device and browser are inferred fields
  */
 public class Transaction {
 
+    @NotBlank
     private String userId;
 
+    @NotBlank
     private String ipAddress;
 
     private String city;
@@ -21,8 +26,10 @@ public class Transaction {
     private String browser;
 
     //TODO to handle floating point numbers , use BigDecimal
+    @NotNull
     private Integer amount;
 
+    @NotBlank
     private String type;
 
     private Integer dailyLimit;
@@ -151,5 +158,17 @@ public class Transaction {
                 ", spentBeforeThis=" + spentBeforeThis +
                 ", userAgent='" + userAgent + '\'' +
                 '}';
+    }
+
+    public boolean isEmpty()
+    {
+        if(isNullOrEmpty(this.userId) || isNullOrEmpty(this.ipAddress) || isNullOrEmpty(this.type) || this.amount == null)
+            return true;
+        return false;
+    }
+
+    private boolean isNullOrEmpty(String s)
+    {
+        return (s == null || s.isEmpty());
     }
 }
